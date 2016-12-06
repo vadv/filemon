@@ -1,0 +1,12 @@
+[submodule "src/github.com/hpcloud/tail"]
+	path = src/github.com/hpcloud/tail
+	url = https://github.com/hpcloud/tail.git
+[submodule "src/gopkg.in/fsnotify.v1"]
+	path = src/gopkg.in/fsnotify.v1
+	url = https://github.com/fsnotify/fsnotify.git
+[submodule "src/gopkg.in/tomb.v1"]
+	path = src/gopkg.in/tomb.v1
+	url = https://github.com/go-tomb/tomb.git
+[submodule "src/golang.org/x/sys"]
+	path = src/golang.org/x/sys
+	url = https://github.com/golang/sys.git
