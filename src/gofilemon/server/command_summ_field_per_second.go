@@ -62,8 +62,10 @@ func (c *SummFieldPerSecond) Process(line string) {
 		if fieldNum < 0 {
 			return
 		}
-		value = data[c.fieldNum]
+		value = data[fieldNum]
 	}
+	value = strings.Trim(value, `"`)
+	value = strings.Trim(value, ` `)
 
 	// parse value
 	if result, err := strconv.ParseFloat(value, 64); err != nil {
