@@ -45,7 +45,7 @@ func (c *CountLinesPerSecond) Result() float64 {
 	defer c.lock.Unlock()
 
 	now := time.Now().UnixNano()
-	result := float64(time.Millisecond) * float64(c.counter) / float64(now-c.lastResultTs)
+	result := float64(time.Second) * float64(c.counter) / float64(now-c.lastResultTs)
 	c.counter = 0
 	c.lastResultTs = now
 

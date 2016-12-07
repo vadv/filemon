@@ -79,7 +79,7 @@ func (c *SummFieldPerSecond) Result() float64 {
 	defer c.lock.Unlock()
 
 	now := time.Now().UnixNano()
-	result := float64(time.Millisecond) * float64(c.value) / float64(now-c.lastResultTs)
+	result := float64(time.Second) * float64(c.value) / float64(now-c.lastResultTs)
 	c.value = 0.0
 	c.lastResultTs = now
 
