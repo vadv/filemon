@@ -29,6 +29,8 @@
 * CountLinePerSecond
 * SummField
 * SummFieldPerSecond
+* AvgField
+* AvgFieldPerSecond
 
 `command-args` - дополнительные аргуемнты для сценария (например число -3 для SummField означает что суммировать надо третью с конца колонку, разделенные пробелами)
 
