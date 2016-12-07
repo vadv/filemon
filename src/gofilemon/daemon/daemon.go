@@ -39,8 +39,14 @@ func reborn(umask uint32, workDir string) (err error) {
 		if err = cmd.Start(); err != nil {
 			return
 		}
-		fmt.Printf(protocol.ERROR_ONLY_DAEMON_START)
-		os.Exit(protocol.ERROR_COMMON_CODE)
+		// если хотели запустить комманду на обработку но демон не был запущен - стартуем
+		if len(os.Args) > 1 {
+			fmt.Printf(protocol.ERROR_ONLY_DAEMON_START)
+			os.Exit(protocol.ERROR_COMMON_CODE)
+		} else {
+			// был просто запуск демона
+			os.Exit(0)
+		}
 	}
 	syscall.Umask(int(umask))
 	if len(workDir) != 0 {

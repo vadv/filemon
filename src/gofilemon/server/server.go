@@ -98,6 +98,7 @@ func (s *Server) clientHandle(conn net.Conn) {
 	if err := processor.registerCommand(commandKey, command, regexpLine, commandArgs); err != nil {
 		log.Printf("[ERROR] Can't register command: %s\n", err.Error())
 		writeWithTimeout(conn, []byte(protocol.ERROR_COMMAND))
+		return
 	}
 
 	writeWithTimeout(conn, []byte(protocol.ERROR_ONLY_REGISTER))
